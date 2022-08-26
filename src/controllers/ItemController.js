@@ -21,6 +21,6 @@ export const getCategories = async (req, res) => {
 };
 
 export const deleteItem = async (req, res) => {
-  const data = await ItemModel.deleteOne({ _id: req.params.id });
+  await ItemModel.deleteOne({ _id: req.params.id });
   res.send("Deleted succesfully");
 };
