@@ -116,6 +116,7 @@ export const getShopLists = async (req, res) => {
           },
         },
       },
+
       {
         $sort: {
           "_id.month": -1,
@@ -126,5 +127,16 @@ export const getShopLists = async (req, res) => {
     res.send(data);
   } catch (e) {
     console.log(e);
+  }
+};
+
+export const getSingleShopList = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const data = await ShopListModel.findById(id);
+    res.send(data);
+  } catch (e) {
+    console.log(e);
+    res.send("An error has occurred");
   }
 };
