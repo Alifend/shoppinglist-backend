@@ -5,7 +5,7 @@ import cors from "cors";
 import itemRouter from "./src/routes/ItemRouter.js";
 import shopListRouter from "./src/routes/shopListRouter.js";
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 mongoose.connect(process.env.URI);
 app.use(cors());
